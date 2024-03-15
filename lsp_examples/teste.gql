@@ -1,0 +1,133 @@
+# Define the GraphQL schema
+
+# Scalars
+scalar Date
+
+# Enums
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+# Object types
+type User {
+  id: ID!
+  username: String!
+  email: String!
+  gender: Gender!
+  dateOfBirth: Date!
+}
+
+type Post {
+  id: ID!
+  title: String!
+  content: String!
+  author: User!
+  createdAt: Date!
+}
+
+# Queries
+type Query {
+  getUser(id: ID!): User
+  getAllUsers: [User]!
+  getPost(id: ID!): Post
+  getAllPosts: [Post]!
+}
+
+# Mutations
+type Mutation {
+  createUser(
+    username: String!
+    email: String!
+    gender: Gender!
+    dateOfBirth: Date!
+  ): User!
+  createPost(title: String!, content: String!, authorId: ID!): Post!
+}
+
+# Example usage:
+
+# Query to get a user by ID
+query GetUserById {
+  getUser(id: "1") {
+    id
+    username
+    email
+    gender
+    dateOfBirth
+  }
+}
+
+# Query to get all users
+query GetAllUsers {
+  getAllUsers {
+    id
+    username
+    email
+    gender
+    dateOfBirth
+  }
+}
+
+# Query to get a post by ID
+query GetPostById {
+  getPost(id: "1") {
+    id
+    title
+    content
+    createdAt
+    author {
+      id
+      username
+    }
+  }
+}
+
+# Query to get all posts
+query GetAllPosts {
+  getAllPosts {
+    id
+    title
+    content
+    createdAt
+    author {
+      id
+      username
+    }
+  }
+}
+
+# Mutation to create a new user
+mutation CreateUser {
+  createUser(
+    username: "example_user"
+    email: "user@example.com"
+    gender: MALE
+    dateOfBirth: "1990-01-01"
+  ) {
+    id
+    username
+    email
+    gender
+    dateOfBirth
+  }
+}
+
+# Mutation to create a new post
+mutation CreatePost {
+  createPost(
+    title: "Example Post"
+    content: "This is an example post."
+    authorId: "1"
+  ) {
+    id
+    title
+    content
+    createdAt
+    author {
+      id
+      username
+    }
+  }
+}

@@ -1,0 +1,60 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #f8f9fa;
+
+// Mixin
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Nested CSS
+.container {
+  background-color: $background-color;
+  padding: 20px;
+
+  header {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 10px;
+  }
+
+  nav {
+    ul {
+      list-style-type: none;
+
+      li {
+        display: inline-block;
+        margin: 0 10px;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .main-content {
+    padding: 20px;
+
+    .section {
+      margin-bottom: 20px;
+
+      h2 {
+        color: $primary-color;
+      }
+    }
+  }
+
+  footer {
+    background-color: $secondary-color;
+    color: #fff;
+    padding: 10px;
+
+    // Using mixin
+    @include flex-center;
+  }
+}

@@ -1,0 +1,33 @@
+name = "John Doe"
+age = 30
+height = 6.1
+is_student = false
+birthdate = 1990-05-15
+hobbies = ["reading", "hiking", "cooking"]
+
+[address]
+street = "123 Main St"
+city = "Anytown"
+country = "USA"
+
+[contact]
+email = "john.doe@example.com"
+phone = "+1234567890"
+
+[[friends]]
+name = "Alice"
+age = 28
+
+[friends.address]
+street = "456 Elm St"
+city = "Smalltown"
+country = "Canada"
+
+[[friends]]
+name = "Bob"
+age = 32
+
+[friends.address]
+street = "789 Oak St"
+city = "Villagetown"
+country = "UK"

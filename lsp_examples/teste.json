@@ -1,5 +1,74 @@
 {
-  "message": "Hello, world from complex JSON!",
-  "description": "This is a more complex JSON file."
+  "company": "Tech Innovations Inc.",
+  "location": "Silicon Valley, California",
+  "founded_year": 2010,
+  "revenue_millions": 150.25,
+  "is_public": true,
+  "ceo": {
+    "name": "Elon Musk",
+    "age": 50,
+    "nationality": "American",
+    "compensation": null
+  },
+  "board_members": [
+    {
+      "name": "Susan Johnson",
+      "position": "Chairperson",
+      "age": 55,
+      "is_active": true
+    },
+    {
+      "name": "David Lee",
+      "position": "Director",
+      "age": 60,
+      "is_active": false
+    }
+  ],
+  "products": [
+    {
+      "name": "InnovateX",
+      "type": "Software",
+      "release_date": "2023-05-15",
+      "price": 199.99,
+      "is_featured": true
+    },
+    {
+      "name": "TechGadget",
+      "type": "Hardware",
+      "release_date": "2022-09-30",
+      "price": 599.99,
+      "is_featured": false
+    }
+  ],
+  "employees": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "position": "Software Engineer",
+      "department": "Engineering",
+      "email": "john.smith@techinnovations.com",
+      "phone": "+1 (123) 456-7890",
+      "salary": 95000,
+      "start_date": "2015-03-20",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "name": "Alice Johnson",
+      "position": "Product Manager",
+      "department": "Product Management",
+      "email": "alice.johnson@techinnovations.com",
+      "phone": "+1 (234) 567-8901",
+      "salary": 110000,
+      "start_date": "2018-01-10",
+      "is_active": true
+    }
+  ],
+  "partners": {
+    "company_name": "TechSolutions LLC",
+    "contact_person": "Michael Brown",
+    "contact_email": "michael.brown@techsolutions.com",
+    "contract_expiry": "2025-12-31",
+    "is_active": true
+  }
 }
-

@@ -1,25 +1,51 @@
 local conform = require("conform")
 conform.setup({
 	formatters_by_ft = {
-		lua = { "stylua" },
-		javascript = { { "prettierd", "prettier" } },
-		typescript = { { "prettierd", "prettier" } },
-		javascriptreact = { { "prettierd", "prettier" } },
-		typescriptreact = { { "prettierd", "prettier" } },
-		json = { { "prettierd", "prettier" } },
-		graphql = { { "prettierd", "prettier" } },
-		css = { { "prettierd", "prettier" } },
-		scss = { { "prettierd", "prettier" } },
-		java = { "google-java-format" },
-		kotlin = { "ktlint" },
-		markdown = { { "prettierd", "prettier" } },
-		html = {},
-		bash = { "beautysh" },
-		proto = { "buf" },
+		-- c/cpp
+		c = { "clang_format" },
+		cpp = { "clang_format" },
+
+		-- rust
 		rust = { "rustfmt" },
-		yaml = { "yamlfix" },
-		toml = { "taplo" },
+
+		-- python
 		python = { "isort", "black" },
+
+		-- golang
+		go = { "gofmt", "goimports" },
+
+		-- lua
+		lua = { "stylua" },
+
+		-- javascript/typescript
+		javascript = { "prettier" },
+		typescript = { "prettier" },
+		javascriptreact = { "prettier" },
+		typescriptreact = { "prettier" },
+
+		-- jvm
+		java = {},
+		-- groovy = {},
+		-- kotlin = { "ktlint" },
+
+		-- file type
+		json = { "prettier" },
+		yaml = { "yamlfix", "yamlfmt" },
+		toml = { "taplo" },
+		graphql = { "prettier" },
+		hcl = { "packer_fmt" },
+		css = { "prettier" },
+		scss = { "prettier" },
+		markdown = { "markdownlint" },
+		bash = { "shfmt" },
+		sh = { "shfmt" },
+		zsh = { "shfmt" },
+		proto = { "buf" },
+	},
+	format_on_save = {
+		-- These options will be passed to conform.format()
+		timeout_ms = 1000,
+		lsp_fallback = true,
 	},
 })
 

@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+message Example {
+  // Scalar Types
+  int32 int_field = 1;
+  int64 long_field = 2;
+  uint32 uint_field = 3;
+  uint64 ulong_field = 4;
+  float float_field = 5;
+  double double_field = 6;
+  bool bool_field = 7;
+  string string_field = 8;
+  bytes bytes_field = 9;
+
+  // Enum Type
+  enum EnumType {
+    OPTION1 = 0;
+    OPTION2 = 1;
+    OPTION3 = 2;
+  }
+  EnumType enum_field = 10;
+
+  // Nested Message
+  message NestedMessage {
+    int32 nested_int_field = 1;
+    string nested_string_field = 2;
+  }
+  NestedMessage nested_message_field = 11;
+
+  // Repeated Fields
+  repeated int32 repeated_int_field = 12;
+  repeated string repeated_string_field = 13;
+  repeated NestedMessage repeated_nested_message_field = 14;
+
+  // Map Field
+  map<string, int32> map_field = 15;
+}
+
