@@ -60,6 +60,13 @@ local plugins = {
 		"numToStr/Comment.nvim",
 		lazy = false,
 	},
+	{
+		"lewis6991/gitsigns.nvim",
+	},
+	{
+		"numToStr/Comment.nvim",
+		lazy = false,
+	},
 
 	-- INFO: Telescope
 	{
