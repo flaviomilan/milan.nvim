@@ -67,6 +67,15 @@ local plugins = {
 		"numToStr/Comment.nvim",
 		lazy = false,
 	},
+	{
+		"epwalsh/obsidian.nvim",
+		version = "*",
+		lazy = true,
+		ft = "markdown",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+		},
+	},
 
 	-- INFO: Telescope
 	{
