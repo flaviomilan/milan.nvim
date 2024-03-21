@@ -1,3 +1,39 @@
+local black0 = "#191D24"
+local black1 = "#1E222A"
+local black2 = "#222630"
+local gray0 = "#242933"
+local gray1 = "#2E3440"
+local gray2 = "#3B4252"
+local gray3 = "#434C5E"
+local gray4 = "#4C566A"
+local gray5 = "#60728A"
+local white_alt = "#C0C8D8"
+local white0 = "#BBC3D4"
+local white1 = "#D8DEE9"
+local white2 = "#E5E9F0"
+local white3 = "#ECEFF4"
+local magenta = "#B48EAD"
+local magenta_b = "#BE9DB8"
+local magenta_d = "#A07EA1"
+local green = "#A3BE8C"
+local green_b = "#B1C89D"
+local green_d = "#97B67C"
+local yellow = "#EBCB8B"
+local yellow_b = "#EFD49F"
+local yellow_d = "#E7C173"
+local orange = "#D08770"
+local orange_b = "#D79784"
+local orange_d = "#CB775D"
+local red = "#BF616A"
+local red_b = "#C5727A"
+local red_d = "#B74E58"
+local cyan = "#8FBCBB"
+local cyan_b = "#9FC6C5"
+local cyan_d = "#80B3B2"
+local blue0 = "#5E81AC"
+local blue1 = "#81A1C1"
+local blue2 = "#88C0D0"
+
 require("obsidian").setup({
 	workspaces = {
 		{
@@ -5,8 +41,6 @@ require("obsidian").setup({
 			path = "~/zettelkasten",
 		},
 	},
-
-	notes_subdir = "notes",
 
 	log_level = vim.log.levels.INFO,
 
@@ -37,6 +71,7 @@ require("obsidian").setup({
 		},
 	},
 
+	notes_subdir = "zettel",
 	new_notes_location = "notes_subdir",
 
 	note_id_func = function(title)
@@ -117,11 +152,11 @@ require("obsidian").setup({
 	open_notes_in = "current",
 
 	callbacks = {
-		post_setup = function(client) end,
-		enter_note = function(client, note) end,
-		leave_note = function(client, note) end,
-		pre_write_note = function(client, note) end,
-		post_set_workspace = function(client, workspace) end,
+		-- post_setup = function(client) end,
+		-- enter_note = function(client, note) end,
+		-- leave_note = function(client, note) end,
+		-- pre_write_note = function(client, note) end,
+		-- post_set_workspace = function(client, workspace) end,
 	},
 
 	ui = {
@@ -144,17 +179,19 @@ require("obsidian").setup({
 		highlight_text = { hl_group = "ObsidianHighlightText" },
 		tags = { hl_group = "ObsidianTag" },
 		block_ids = { hl_group = "ObsidianBlockID" },
+
+		-- nordic theme
 		hl_groups = {
-			ObsidianTodo = { bold = true, fg = "#f78c6c" },
-			ObsidianDone = { bold = true, fg = "#89ffbc" },
-			ObsidianRightArrow = { bold = true, fg = "#f78c6c" },
-			ObsidianTilde = { bold = true, fg = "#ff5370" },
-			ObsidianBullet = { bold = true, fg = "#89ddff" },
-			ObsidianRefText = { underline = true, fg = "#c792ea" },
-			ObsidianExtLinkIcon = { fg = "#c792ea" },
-			ObsidianTag = { italic = true, fg = "#89ddff" },
-			ObsidianBlockID = { italic = true, fg = "#89ddff" },
-			ObsidianHighlightText = { bg = "#75662e" },
+			ObsidianTodo = { bold = true, fg = orange_b },
+			ObsidianDone = { bold = true, fg = green_b },
+			ObsidianRightArrow = { bold = true, fg = yellow_b },
+			ObsidianTilde = { bold = true, fg = red_b },
+			ObsidianBullet = { bold = true, fg = blue1 },
+			ObsidianRefText = { underline = true, fg = yellow_b },
+			ObsidianExtLinkIcon = { fg = magenta_b },
+			ObsidianTag = { italic = true, fg = orange_b },
+			ObsidianBlockID = { italic = true, fg = orange_d },
+			ObsidianHighlightText = { bg = cyan_b },
 		},
 	},
 
