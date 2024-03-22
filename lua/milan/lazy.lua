@@ -38,19 +38,36 @@ local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
+		dependencies = {
+			"lukas-reineke/headlines.nvim",
+		},
 	},
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+
+	-- themes
 	{
 		"AlexvZyl/nordic.nvim",
 		lazy = false,
 		priority = 1000,
-		config = function()
-			require("nordic").load()
-		end,
 	},
+	{
+		"catppuccin/nvim",
+		name = "catppuccin",
+		priority = 1000,
+	},
+	{
+		"folke/tokyonight.nvim",
+		lazy = false,
+		priority = 1000,
+	},
+	{
+		"shaunsingh/nord.nvim",
+	},
+	-- end themes
+
 	{
 		"folke/which-key.nvim",
 		event = "VeryLazy",
@@ -62,10 +79,6 @@ local plugins = {
 	},
 	{
 		"lewis6991/gitsigns.nvim",
-	},
-	{
-		"numToStr/Comment.nvim",
-		lazy = false,
 	},
 	{
 		"epwalsh/obsidian.nvim",
